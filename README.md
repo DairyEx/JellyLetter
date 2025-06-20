@@ -19,8 +19,8 @@ A Dockerized Python service for generating and sending email newsletters based o
    ```bash
    docker-compose up --build -d
    ```
-3. Access GUI at `http://<host>:5000`
-4. Configure settings and schedule, or click "Send Now" to trigger a newsletter immediately.
+3. Access the GUI at `http://<host>:5000`
+4. Open **Settings** and provide your Jellyfin URL and API key. Configure a schedule or click "Send Now" to trigger a newsletter immediately.
 5. View recent send history under **Stats**.
    Settings are saved to `app/config.json` for persistence (a template is
    provided as `app/config.example.json`).
@@ -37,7 +37,7 @@ python app/main.py
 ### Environment Variables
 
 ```
-JELLYFIN_URL          Jellyfin server URL
+JELLYFIN_URL          Jellyfin server URL. Leave empty to configure in the GUI.
 JELLYFIN_API_KEY      API key for Jellyfin
 SMTP_SERVER           SMTP server address (works with ProtonMail tokens)
 SMTP_PORT             SMTP port (e.g. 587)

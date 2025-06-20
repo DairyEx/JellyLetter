@@ -6,7 +6,8 @@ services:
     ports:
       - "5000:5000"
     environment:
-      JELLYFIN_URL: "http://your-jellyfin:8096"
+      # Configure Jellyfin URL in the web settings after startup
+      JELLYFIN_URL: ""
       JELLYFIN_API_KEY: "YOUR_API_KEY_HERE"
       SMTP_SERVER: smtp.example.com
       SMTP_PORT: 587

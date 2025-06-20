@@ -1,5 +1,5 @@
 {
-  "JELLYFIN_URL": "http://jellyfin:8096",
+  "JELLYFIN_URL": "",
   "API_KEY": "",
   "SMTP_SERVER": "",
   "SMTP_PORT": 587,
