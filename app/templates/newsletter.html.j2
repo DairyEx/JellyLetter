@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{{ subject }}</title>
+</head>
+<body style="font-family: sans-serif;">
+  <h1>{{ subject }}</h1>
+  <h2>🎉 New Additions in the Last Week</h2>
+  <ul>
+    {% for item in new_items %}
+      <li>{{ item.Name }} ({{ item.Type }})</li>
+    {% endfor %}
+  </ul>
+  <h2>🔥 Top Watched</h2>
+  <ol>
+    {% for item in top_watched %}
+      <li>{{ item.Name }} — {{ item.PlayCount }} plays</li>
+    {% endfor %}
+  </ol>
+  <p>— Enjoy your media!</p>
+</body>
+</html>

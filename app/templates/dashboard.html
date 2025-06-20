@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>JellyLetter Dashboard</title>
+</head>
+<body>
+  <h1>📊 Jellyfin Stats</h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, msg in messages %}
+      <div class="flash {{ category }}">{{ msg }}</div>
+    {% endfor %}
+  {% endwith %}
+  <h2>New This Week</h2>
+  <ul>
+    {% for i in new_items %}
+      <li>{{ i.Name }} ({{ i.Type }})</li>
+    {% endfor %}
+  </ul>
+  <h2>Top Watched</h2>
+  <ol>
+    {% for i in top_watched %}
+      <li>{{ i.Name }} — {{ i.PlayCount }}</li>
+    {% endfor %}
+  </ol>
+  <a href="{{ url_for('ui.send_now') }}">📤 Send Now</a> |
+  <a href="{{ url_for('ui.settings') }}">⚙️ Settings</a>
+</body>
+</html>

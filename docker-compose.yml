@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  jellyletter:
+    container_name: jellyletter
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      JELLYFIN_URL: "http://your-jellyfin:8096"
+      JELLYFIN_API_KEY: "YOUR_API_KEY_HERE"
+      SMTP_SERVER: smtp.example.com
+      SMTP_PORT: 587
+      SMTP_USER: "newsletter@example.com"
+      SMTP_PASS: "supersecret"
+      NEWSLETTER_TO: "you@yourdomain.com"
+    entrypoint:
+      - "sh"
+      - "-c"
+      - |
+        # Simple daily run loop
+        while true; do 
+          python main.py 
+          sleep 86400 
+        done
