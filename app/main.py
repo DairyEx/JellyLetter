@@ -18,8 +18,11 @@ def scheduled_job():
     }
     send_newsletter(ctx)
 
+import os
+
 if __name__ == "__main__":
     scheduler = BackgroundScheduler()
     scheduler.add_job(scheduled_job, "cron", day_of_week="mon", hour=8, minute=0)
     scheduler.start()
-    app.run(host="0.0.0.0", port=5000)
+    port = int(os.getenv("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)

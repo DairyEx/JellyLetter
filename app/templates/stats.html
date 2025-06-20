@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Newsletter Stats</title>
+</head>
+<body>
+  <h1>📈 Newsletter Log</h1>
+  <ul>
+    {% for entry in log_entries %}
+      <li>{{ entry }}</li>
+    {% endfor %}
+  </ul>
+  <a href="{{ url_for('ui.dashboard') }}">← Back</a>
+</body>
+</html>

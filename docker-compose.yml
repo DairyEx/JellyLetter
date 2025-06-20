@@ -13,6 +13,9 @@ services:
       SMTP_USER: "newsletter@example.com"
       SMTP_PASS: "supersecret"
       NEWSLETTER_TO: "you@yourdomain.com"
+      DISCORD_WEBHOOK_URL: ""
+      TELEGRAM_BOT_TOKEN: ""
+      TELEGRAM_CHAT_ID: ""
     entrypoint:
       - "sh"
       - "-c"

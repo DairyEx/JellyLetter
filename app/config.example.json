@@ -1,0 +1,13 @@
+{
+  "JELLYFIN_URL": "http://jellyfin:8096",
+  "API_KEY": "",
+  "SMTP_SERVER": "",
+  "SMTP_PORT": 587,
+  "SMTP_USER": "",
+  "SMTP_PASS": "",
+  "NEWSLETTER_TO": "",
+  "DISCORD_WEBHOOK_URL": "",
+  "TELEGRAM_BOT_TOKEN": "",
+  "TELEGRAM_CHAT_ID": ""
+}
+
