@@ -1,28 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Settings</title>
-</head>
-<body>
-  <h1>⚙️ Configuration</h1>
-  <form method="post">
-    <label>Jellyfin URL: <input name="jellyfin_url" value="{{ jellyfin_url }}"/></label><br/>
-    <label>API Key: <input name="api_key" value="{{ api_key }}"/></label><br/>
-    <hr/>
-    <h2>SMTP (ProtonMail tokens supported)</h2>
-    <label>Server: <input name="smtp_server" value="{{ smtp_server }}"/></label><br/>
-    <label>Port: <input name="smtp_port" value="{{ smtp_port }}"/></label><br/>
-    <label>User: <input name="smtp_user" value="{{ smtp_user }}"/></label><br/>
-    <label>Password / Token: <input name="smtp_pass" value="{{ smtp_pass }}"/></label><br/>
-    <label>Recipient: <input name="newsletter_to" value="{{ newsletter_to }}"/></label><br/>
-    <hr/>
-    <h2>Notifications</h2>
-    <label>Discord Webhook: <input name="discord_webhook_url" value="{{ discord_webhook_url }}"/></label><br/>
-    <label>Telegram Bot Token: <input name="telegram_bot_token" value="{{ telegram_bot_token }}"/></label><br/>
-    <label>Telegram Chat ID: <input name="telegram_chat_id" value="{{ telegram_chat_id }}"/></label><br/>
-    <button type="submit">Save</button>
-  </form>
-  <a href="{{ url_for('ui.dashboard') }}">← Back</a>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Settings{% endblock %}
+{% block content %}
+<h1>⚙️ Configuration</h1>
+<form method="post">
+  <label>Jellyfin URL: <input name="jellyfin_url" value="{{ jellyfin_url }}"/></label><br/>
+  <label>API Key: <input name="api_key" value="{{ api_key }}"/></label><br/>
+  <hr/>
+  <h2>SMTP (ProtonMail tokens supported)</h2>
+  <label>Server: <input name="smtp_server" value="{{ smtp_server }}"/></label><br/>
+  <label>Port: <input name="smtp_port" value="{{ smtp_port }}"/></label><br/>
+  <label>User: <input name="smtp_user" value="{{ smtp_user }}"/></label><br/>
+  <label>Password / Token: <input name="smtp_pass" value="{{ smtp_pass }}"/></label><br/>
+  <label>Recipient: <input name="newsletter_to" value="{{ newsletter_to }}"/></label><br/>
+  <hr/>
+  <h2>Notifications</h2>
+  <label>Discord Webhook: <input name="discord_webhook_url" value="{{ discord_webhook_url }}"/></label><br/>
+  <label>Telegram Bot Token: <input name="telegram_bot_token" value="{{ telegram_bot_token }}"/></label><br/>
+  <label>Telegram Chat ID: <input name="telegram_chat_id" value="{{ telegram_chat_id }}"/></label><br/>
+  <button type="submit">Save</button>
+</form>
+<p><a href="{{ url_for('ui.dashboard') }}">← Back</a></p>
+{% endblock %}
