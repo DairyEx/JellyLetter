@@ -1,5 +1,5 @@
 # JellyLetter Newsletter Service
-
+![Jellyletter Icon](app/static/jellyletter.png)
 A Dockerized Python service for generating and sending email newsletters based on Jellyfin server usage statistics.
 
 ## Features
