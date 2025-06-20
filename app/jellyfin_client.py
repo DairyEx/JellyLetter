@@ -7,6 +7,14 @@ from config import JELLYFIN_URL, API_KEY
 HEADERS = {"X-Emby-Token": API_KEY}
 
 
+def _url_configured() -> bool:
+    """Return True if JELLYFIN_URL is set to a real address."""
+    if not JELLYFIN_URL or "your-jellyfin" in JELLYFIN_URL:
+        logging.warning("JELLYFIN_URL not configured; set it in Settings")
+        return False
+    return True
+
+
 def _get_json(url: str, **kwargs) -> Dict[str, Any] | list:
     """Return JSON from ``url`` or an empty structure on failure."""
     try:
@@ -21,8 +29,7 @@ def _get_json(url: str, **kwargs) -> Dict[str, Any] | list:
 
 def get_recently_added(days: int = 7):
     """Return recently added items or an empty list on failure."""
-    if not JELLYFIN_URL:
-        logging.warning("JELLYFIN_URL not configured")
+    if not _url_configured():
         return []
     params = {
         "Recursive": True,
@@ -35,8 +42,7 @@ def get_recently_added(days: int = 7):
 
 def get_most_watched(top_n: int = 5):
     """Return the most watched items or an empty list on failure."""
-    if not JELLYFIN_URL:
-        logging.warning("JELLYFIN_URL not configured")
+    if not _url_configured():
         return []
     data = _get_json(f"{JELLYFIN_URL}/Reports/MostPlayedItems")
     if isinstance(data, list):

@@ -23,3 +23,11 @@
 - Removed the default URL so `JELLYFIN_URL` starts empty and is configured via the Settings page.
 - Updated `docker-compose.yml`, `config.example.json`, and the README accordingly.
 - `jellyfin_client` now warns and returns empty data when the URL isn't set.
+
+## Issue
+- Placeholder addresses like `http://your-jellyfin:8096` were still accepted and
+  caused connection errors.
+
+## Fix
+- Added `_url_configured` helper that checks for empty or placeholder URLs and
+  logs a warning so requests are skipped until a real server is configured.
