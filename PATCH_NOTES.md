@@ -31,3 +31,9 @@
 ## Fix
 - Added `_url_configured` helper that checks for empty or placeholder URLs and
   logs a warning so requests are skipped until a real server is configured.
+
+## Issue
+- Merge conflicts left markers in `jellyfin_client.py` on the updated branch.
+
+## Fix
+- Removed the conflict markers and ensured imports are clean.
